@@ -33,10 +33,10 @@ void Printarray (int [,] Array)
 } 
 Printarray(Array);
 
-double GetAverage (int [,] Array)
+double [] GetAverage (int [,] Array)
 {  
     double sum= 0;
-    int colNumber = 0;
+    double [] result = new double [Array.GetLength(1)];
 for (int j = 0; j < Array.GetLength(1); j++)
 {
     for (int i = 0; i < Array.GetLength(0); i++)
@@ -44,8 +44,7 @@ for (int j = 0; j < Array.GetLength(1); j++)
      sum = sum + Array [i,j];
     } 
     double columnAverage = sum/Array.GetLength(0);
-    colNumber = colNumber + 1;
-    Console.WriteLine($"Arithmetic average of the column is {colNumber} : {columnAverage}"!);
+    Console.WriteLine($"Arithmetic average of the columns is : {columnAverage}"!);
     sum = 0; 
 }
 }
